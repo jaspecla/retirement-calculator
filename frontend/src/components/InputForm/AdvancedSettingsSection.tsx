@@ -26,7 +26,7 @@ const AdvancedSettingsSection: React.FC<AdvancedSettingsSectionProps> = ({ reque
           width: '100%',
         }}
       >
-        <span style={{ fontSize: 14, transition: 'transform 0.2s', transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+        <span style={{ fontSize: 15, transition: 'transform 0.2s', transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
           ▶
         </span>
         <h2 style={{ ...sectionTitleStyle, marginBottom: 0 }}>Advanced Settings</h2>
@@ -106,8 +106,8 @@ const AdvancedSettingsSection: React.FC<AdvancedSettingsSectionProps> = ({ reque
             padding: '10px 14px',
             backgroundColor: '#f8f9fa',
             borderRadius: 6,
-            fontSize: 13,
-            color: '#666',
+            fontSize: 14,
+            color: '#555',
             lineHeight: 1.5,
           }}>
             ℹ️ Defaults based on historical S&amp;P 500 returns.

@@ -45,79 +45,85 @@ const AccountsSection: React.FC<AccountsSectionProps> = ({ accounts, onChange })
         <div
           key={index}
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr 1fr auto',
-            gap: 12,
-            alignItems: 'end',
-            padding: '12px 0',
-            borderBottom: index < accounts.length - 1 ? '1px solid #f0f0f0' : 'none',
+            padding: '16px',
+            marginBottom: 12,
+            border: '1px solid #e8e8e8',
+            borderRadius: 8,
+            backgroundColor: '#fafafa',
           }}
         >
-          <div>
-            {index === 0 && <label style={labelStyle}>Account Name</label>}
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="e.g. My 401(k)"
-              value={account.name}
-              onChange={(e) => updateAccount(index, { name: e.target.value })}
-            />
-          </div>
-          <div>
-            {index === 0 && <label style={labelStyle}>Account Type</label>}
-            <select
-              style={{ ...inputStyle, cursor: 'pointer' }}
-              value={account.type}
-              onChange={(e) => updateAccount(index, { type: e.target.value as AccountType })}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+            <span style={{ fontSize: 14, fontWeight: 600, color: '#666' }}>Account {index + 1}</span>
+            <button
+              type="button"
+              onClick={() => removeAccount(index)}
+              style={{
+                ...buttonStyle,
+                backgroundColor: '#fff',
+                color: '#dc3545',
+                border: '1px solid #dc3545',
+                padding: '4px 10px',
+                fontSize: 13,
+              }}
+              title="Remove account"
             >
-              {ACCOUNT_TYPES.map((type) => (
-                <option key={type} value={type}>
-                  {ACCOUNT_TYPE_LABELS[type]}
-                </option>
-              ))}
-            </select>
+              ✕ Remove
+            </button>
           </div>
-          <div>
-            {index === 0 && <label style={labelStyle}>Balance</label>}
-            <div style={{ position: 'relative' }}>
-              <span style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: '#666' }}>$</span>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+            <div>
+              <label style={labelStyle}>Account Name</label>
               <input
-                type="number"
-                style={currencyInputStyle}
-                value={account.balance}
-                min={0}
-                onChange={(e) => updateAccount(index, { balance: Number(e.target.value) })}
+                type="text"
+                style={inputStyle}
+                placeholder="e.g. My 401(k)"
+                value={account.name}
+                onChange={(e) => updateAccount(index, { name: e.target.value })}
               />
             </div>
-          </div>
-          <div>
-            {index === 0 && <label style={labelStyle}>Annual Contribution</label>}
-            <div style={{ position: 'relative' }}>
-              <span style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: '#666' }}>$</span>
-              <input
-                type="number"
-                style={currencyInputStyle}
-                value={account.annualContribution}
-                min={0}
-                onChange={(e) => updateAccount(index, { annualContribution: Number(e.target.value) })}
-              />
+            <div>
+              <label style={labelStyle}>Account Type</label>
+              <select
+                style={{ ...inputStyle, cursor: 'pointer' }}
+                value={account.type}
+                onChange={(e) => updateAccount(index, { type: e.target.value as AccountType })}
+              >
+                {ACCOUNT_TYPES.map((type) => (
+                  <option key={type} value={type}>
+                    {ACCOUNT_TYPE_LABELS[type]}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
-          <button
-            type="button"
-            onClick={() => removeAccount(index)}
-            style={{
-              ...buttonStyle,
-              backgroundColor: '#fff',
-              color: '#dc3545',
-              border: '1px solid #dc3545',
-              padding: '8px 12px',
-              marginBottom: index === 0 ? 0 : undefined,
-            }}
-            title="Remove account"
-          >
-            ✕
-          </button>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div>
+              <label style={labelStyle}>Balance</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: '#666' }}>$</span>
+                <input
+                  type="number"
+                  style={currencyInputStyle}
+                  value={account.balance}
+                  min={0}
+                  onChange={(e) => updateAccount(index, { balance: Number(e.target.value) })}
+                />
+              </div>
+            </div>
+            <div>
+              <label style={labelStyle}>Annual Contribution</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: '#666' }}>$</span>
+                <input
+                  type="number"
+                  style={currencyInputStyle}
+                  value={account.annualContribution}
+                  min={0}
+                  onChange={(e) => updateAccount(index, { annualContribution: Number(e.target.value) })}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       ))}
 

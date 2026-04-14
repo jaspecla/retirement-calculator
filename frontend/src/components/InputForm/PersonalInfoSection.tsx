@@ -107,7 +107,7 @@ const PersonalInfoSection: React.FC<PersonalInfoSectionProps> = ({ request, onCh
       {isMFJ && (
         <>
           <hr style={{ border: 'none', borderTop: '1px solid #e0e0e0', margin: '20px 0' }} />
-          <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12, color: '#444' }}>Spouse Information</h3>
+          <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 12, color: '#1a1a2e' }}>Spouse Information</h3>
 
           <div style={inlineFieldsStyle}>
             <div style={fieldRowStyle}>

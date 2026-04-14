@@ -53,7 +53,7 @@ const HealthInsuranceSection: React.FC<HealthInsuranceSectionProps> = ({ healthI
         padding: '10px 14px',
         backgroundColor: '#eef6ff',
         borderRadius: 6,
-        fontSize: 13,
+        fontSize: 14,
         color: '#2c5282',
         lineHeight: 1.5,
       }}>

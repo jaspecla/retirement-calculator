@@ -33,14 +33,14 @@ const SocialSecurityFields: React.FC<{
   onChange: (ss: SocialSecurityInfo) => void;
 }> = ({ label, info, onChange }) => (
   <div style={{ marginBottom: 16 }}>
-    <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 12, color: '#444' }}>{label}</h3>
+    <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 12, color: '#1a1a2e' }}>{label}</h3>
 
     <div style={fieldRowStyle}>
       <label style={labelStyle}>
         Claiming Age: <strong>{info.claimingAge}</strong>
       </label>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <span style={{ fontSize: 13, color: '#888' }}>62</span>
+        <span style={{ fontSize: 14, color: '#555' }}>62</span>
         <input
           type="range"
           min={62}
@@ -49,11 +49,11 @@ const SocialSecurityFields: React.FC<{
           onChange={(e) => onChange({ ...info, claimingAge: Number(e.target.value) })}
           style={{ flex: 1, cursor: 'pointer' }}
         />
-        <span style={{ fontSize: 13, color: '#888' }}>70</span>
+        <span style={{ fontSize: 14, color: '#555' }}>70</span>
       </div>
       <span style={{
-        fontSize: 13,
-        color: info.claimingAge < FRA ? '#c0392b' : info.claimingAge > FRA ? '#27ae60' : '#666',
+        fontSize: 14,
+        color: info.claimingAge < FRA ? '#c0392b' : info.claimingAge > FRA ? '#27ae60' : '#333',
         fontWeight: 500,
       }}>
         {getClaimingAdjustmentLabel(info.claimingAge)}
@@ -76,7 +76,7 @@ const SocialSecurityFields: React.FC<{
         href="https://www.ssa.gov/myaccount/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ fontSize: 13, color: '#2980b9' }}
+        style={{ fontSize: 14, color: '#2980b9' }}
       >
         Find your estimate at ssa.gov
       </a>
