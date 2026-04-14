@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import { SimulationRequest, SimulationResponse, DEFAULT_REQUEST } from './types/simulation'
+import type { SimulationRequest, SimulationResponse } from './types/simulation'
+import { DEFAULT_REQUEST } from './types/simulation'
 import { runSimulation } from './api/simulationApi'
 import InputForm from './components/InputForm/InputForm'
 import FanChart from './components/Results/FanChart'

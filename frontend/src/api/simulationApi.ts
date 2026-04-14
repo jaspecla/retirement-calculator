@@ -1,4 +1,4 @@
-import { SimulationRequest, SimulationResponse } from '../types/simulation';
+import type { SimulationRequest, SimulationResponse } from '../types/simulation';
 
 const API_BASE = '/api';
 
